@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"/>
+  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"/>
+  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+
+  <title>Coffee Shop</title>
+</head>
+<body>
+
+<!-- Header -->
+<header class="text-center py-5">
+  <h1>Welcome to my Coffee Shop</h1>
+  <p>Discover the finest coffee blends crafted with passion.</p>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Coffees</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#menu-section" data-bs-target="#menu-section" data-bs-offset="50">Cakes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer" onclick="scrollToFooter()">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="contactName" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<section class="container my-5 menu-section">
+  <h2 class="mb-4 text-center">OUR DISCOUNTS</h2>
+  <h1 class="mb-4 text-center" id="menufood">COFFEES</h1>
+
+  <!-- Espresso section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center flex-row-reverse">
+    <div class="text-center">
+      <h3>Espresso</h3>
+      <p>A strong and concentrated coffee served in small amounts.</p>
+      <p><strong>Price:</strong> $2.50</p>
+      <button class="btn btn-primary" onclick="addToCart('Espresso', 2.50)">Add to Cart</button>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/espresso.png" alt="Espresso" class="img-fluid mb-3">
+    </div>
+  </section>
+  
+  <!-- Cappuccino Section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+      <img src="img/cappuccino.jpg" alt="Cappuccino" class="img-fluid mb-3">
+    </div>
+    <div class="text-center">
+      <h3>Cappuccino</h3>
+      <p>Espresso mixed with steamed milk and topped with a layer of frothed milk.</p>
+      <p><strong>Price:</strong> $3.50</p>
+      <button class="btn btn-primary" onclick="addToCart('Cappuccino', 3.50)">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Macchiato Section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center flex-row-reverse">
+    <div class="text-center">
+      <h3>Macchiato</h3>
+      <p>Espresso with a dollop of frothy milk on top.</p>
+      <p><strong>Price:</strong> $3.00</p>
+      <button class="btn btn-primary" onclick="addToCart('Macchiato', 3.00)">Add to Cart</button>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/macchiato-coffee.jpg" alt="Macchiato" class="img-fluid mb-3">
+    </div>
+  </section>
+
+  <!-- Frappé Section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+      <img src="img/frappe-banoffe.jpg" alt="Frappé" class="img-fluid mb-3">
+    </div>
+    <div class="text-center">
+      <h3>Frappé</h3>
+      <p>A blended iced coffee drink with sweetener, milk, and ice.</p>
+      <p><strong>Price:</strong> $4.00</p>
+      <button class="btn btn-primary" onclick="addToCart('Frappé', 4.00)">Add to Cart</button>
+    </div>
+  </section>
+</section>
+
+<!-- Cakes section -->
+<section class="container my-5 menu-section" id="menu-section">
+  <h1 class="mb-4 text-center" id="menufood">CAKES</h1>
+
+  
+  <!-- Chocolate Cake section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center flex-row-reverse">
+    <div class="text-center">
+      <h3>Chocolate Cake</h3>
+      <p>Decadent chocolate cake made with the finest cocoa.</p>
+      <p><strong>Price:</strong> $5.00</p>
+      <button class="btn btn-primary" onclick="addToCart('Chocolate Cake', 5.00)">Add to Cart</button>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/chocolate-cake.jpg" alt="Chocolate Cake" class="img-fluid mb-3">
+    </div>
+    
+  </section>
+
+  <!-- Carrot Cake Section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+      <img src="img/carrot-cake.jpg" alt="Carrot Cake" class="img-fluid mb-3">
+    </div>
+    <div class="text-center">
+      <h3>Carrot Cake</h3>
+      <p>Moist carrot cake with cream cheese frosting and a sprinkle of walnuts.</p>
+      <p><strong>Price:</strong> $6.00</p>
+      <button class="btn btn-primary" onclick="addToCart('Carrot Cake', 5.00)">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Red Velvet Cake Section -->
+  <section class="menu-item mb-4 d-flex justify-content-center align-items-center flex-row-reverse">
+    <div class="text-center">
+      <h3>Red Velvet Cake</h3>
+      <p>Classic red velvet cake with a rich cream cheese frosting.</p>
+      <p><strong>Price:</strong> $7.00</p>
+      <button class="btn btn-primary" onclick="addToCart('Red Velvet Cake', 5.00)">Add to Cart</button>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/red-velvet-cake.jpg" alt="Red Velvet Cake" class="img-fluid mb-3">
+    </div>
+  </section>
+</section>
+
+<!-- Shopping -->
+<div id="cart" class="container my-5">
+  <h2 class="mb-4 text-center">Shopping Cart</h2>
+  <ul id="cart-items" class="list-group"></ul>
+  <p id="cart-total" class="text-end"><strong>Total: $0.00</strong></p>
+  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal">Buy now</button>
+</div>
+
+<!-- Modal payment -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Payment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Please enter your payment details:</p>
+        <form>
+          <div class="mb-3">
+            <label for="cardNumber" class="form-label">Card Number:</label>
+            <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number">
+          </div>
+          <div class="mb-3">
+            <label for="expirationDate" class="form-label">Expiration Date:</label>
+            <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY">
+          </div>
+          <div class="mb-3">
+            <label for="cvv" class="form-label">CVV:</label>
+            <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="processPayment()">Process Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-light text-center py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Contact Us</h4>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Email:</strong> info@coffeeshop.com</p>
+        <p><strong>Address:</strong> 123 Coffee Street, Cityville</p>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" class="text-light me-3"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="https://www.instagram.com" target="_blank" class="text-light me-3"><i class="bi bi-instagram"></i> Instagram</a>
+          <a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,75y,289.6h,87.01t,0.72r/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656" 
+            target="_blank" class="text-light me-3"><i class="bi bi-maps"></i> Maps</a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <p>&copy; 2024 Coffee Shop</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

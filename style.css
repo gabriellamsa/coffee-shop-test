@@ -1,0 +1,72 @@
+h1 {
+    font-family: 'Long Cang', cursive;
+}
+
+#menufood {
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #B67162; 
+}
+
+.navbar {
+    background-color: #FFC5C5; 
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header {
+    background-image: url(img/coffee\ cups.png);
+    color: #ffffff;
+}
+
+.menu-section {
+    background-color: #E4D3CF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    margin-bottom: 30px;
+}
+
+.menu-item img {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    height: auto;
+}
+
+.menu-item h3 {
+    color: #343a40;
+    margin-top: 15px;
+}
+
+.menu-item p {
+    color: #6c757d;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #9E9D89; 
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.footer {
+    color: #ffffff;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
